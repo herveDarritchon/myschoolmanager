@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-4">
+    <ul class="list-group">
+      <li href="#" class="list-group-item" style="cursor:pointer" ng-class="(afterSchoolCare==afterSchoolCareSelected) ? 'list-group-item-success' : ''" ng-repeat="afterSchoolCare in afterSchoolCares" ng-click="details(afterSchoolCare)">
+        <h4 class="panel-title">{{afterSchoolCare.title}}</h5>
+          <h6 style="font-style:italic">{{afterSchoolCare.description}}</h6>
+          <span style="font-style:italic">{{afterSchoolCare.montant}}</span>
+        </li>
+      </ul>
+    </div>
+</div>
+
+<!--    <div class="col-md-8">
+      <div class="panel panel-success">
+       <div class="panel-heading"><h2>Request URL :</h2>
+        <h2 class="panel-title cesure">{{useCaseSelected.request}}</h2>
+        <div class="clearfix"></div>
+      </div>
+
+
+      <div class="panel http_status"><h2>Response status :</h2>
+        <div class="panel-body" ng-class="(consumption.status.success==true) ? panel-primary : panel-danger">
+          {{consumption.status.title}} {{consumption.status.value}}
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-body"><h2>Response data :</h2>
+          <json-explorer json-data="{{consumption.data}}" collapsed="{{collapsed}}"></json-explorer>
+        </div>
+      </div>
+    </div>
+</div>
+-->
+

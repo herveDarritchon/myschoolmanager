@@ -1,0 +1,32 @@
+{
+  "name": "my-school-manager",
+  "version": "0.0.1",
+  "homepage": "https://github.com/herveDarritchon/myschoolmanager",
+  "authors": [
+    "Hervé Darritchon <herve.darritchon@gmail.com>"
+  ],
+  "description": "front end part of the application",
+  "main": "app.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "school",
+    "montessori"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.26",
+    "angular-resource": "~1.2.26",
+    "bootstrap": "~3.2.0",
+    "angular-route": "~1.2.26"
+  }
+}
