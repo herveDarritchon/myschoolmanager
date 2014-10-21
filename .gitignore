@@ -111,7 +111,7 @@ local.properties
 # PDT-specific
 .buildpath
 
-# sbteclipse plugin 
+# sbteclipse plugin
 .target
 
 # TeXlipse plugin
@@ -132,3 +132,7 @@ bin/
 # ##########################
 *.sublime-project
 *.sublime-workspace
+
+# exclude mongodb
+db/
+db/*

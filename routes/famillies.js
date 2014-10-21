@@ -1,13 +1,7 @@
 var express = require('express');
-var router = express.Router();
-var mongoose =  require ('mongoose');
-var Familly = mongoose.model('Familly');
 
-/*var Famillies=[
-{id: 1, surname:'Einstein', firstname:'Albert', children:[{firstname:'Lieserl',sexe:'Female'},{firstname:'Hans-Albert',sexe:'Male'},{firstname:'Eduard',sexe:'Male'}]},
-{id: 2, surname:'Tesla', firstname:'Nikola'},
-{id: 3, surname:'Edison', firstname:'Thomas', children:[{firstname:'Marion Estelle',sexe:'Female'},{firstname:'Thomas Alva',sexe:'Male'},{firstname:'William Leslie',sexe:'Male'}]}
-];*/
+var router = express.Router();
+var Familly = require('../models/Familly');
 
 // GET
 router.get('/', function(req, res, next){

@@ -1,5 +1,6 @@
 var mySchoolManagerService = angular.module('myschoolmanager.services', ['ngResource']);
 
+var Famillies = $resource('/api/famillies');
   // super simple service
   // each function returns a promise object
   mySchoolManagerService.factory('FamillyAdministrationService', function($http) {
