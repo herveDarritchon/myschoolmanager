@@ -1,16 +1,16 @@
 var mongoose = require('mongoose');
 
-var Familly = mongoose.model('Familly',{
-      surname: String,
+var famillySchema = {
+    surname: String,
     firstname: String,
     email: String,
-    children: [
-        {
-            firstname: String,
-            sexe: String
-        }
-    ]
-});
+    children: [{
+        firstname: String,
+        sexe: String
+    }]
+};
+
+var Familly = mongoose.model('Familly', famillySchema, 'school');
 
 
 /*

@@ -1,30 +1,26 @@
-var mySchoolManagerService = angular.module('myschoolmanager.services', ['ngResource']);
+var mySchoolManagerService = angular.module('services', ['ngResource']);
 
-  // super simple service
-  // each function returns a promise object
-  mySchoolManagerService.factory('FamillyService', ['$resource',
-    function ($resource) {
-    return $resource('famillies',{}, {
-      query: {
-        method:'GET'
+// super simple service
+// each function returns a promise object
+mySchoolManagerService.factory('AfterSchoolService', [
+
+  function() {
+    return {
+      getMessage: "After school care page",
+      getAmount: 14.00
+    }
+  }
+]);
+
+mySchoolManagerService.factory('Familly', ['$resource',
+  function($resource) {
+    var Familly = $resource('/api/famillies/:_id', {}, {
+      update: {
+        method: 'PUT'
       }
     });
 
+    return Familly;
 
-
-/*
-    {
-      get: function() {
-        return $http.get("/api/famillies");
-        //return [{surname: 'Edison', firstname: 'Thomas'},{surname: 'Tesal', firstname: 'Nikola'}];
-      },
-      save: function(familly) {
-        return $http.post("/api/famillies",familly);
-      },
-      update: function(familly) {
-        return $http.put("/api/famillies/"+familly._id,familly);
-      }
-    };
-*/
-
-  }]);
+  }
+]);

@@ -1,4 +1,4 @@
-var mySchoolManagerApp = angular.module('MySchoolManagerApp', ['ngRoute', 'myschoolmanager.controllers', 'myschoolmanager.services']);
+var mySchoolManagerApp = angular.module('MySchoolManagerApp', ['ngRoute', 'controllers', 'services']);
 
 
 mySchoolManagerApp.config(['$routeProvider',

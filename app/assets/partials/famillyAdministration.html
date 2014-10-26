@@ -63,18 +63,18 @@
           <form role="form">
             <div class="form-group">
               <label for="surname">Surname</label>
-              <input type="text" class="form-control" id="surname" placeholder="Enter surname" ng-model="newFamilly.surname" required />
+              <input type="text" class="form-control" id="surname" placeholder="Enter surname" ng-model="familly.surname" required />
             </div>
             <div class="form-group">
               <label for="firstname">Firstname</label>
-              <input type="text" class="form-control" id="firstname" placeholder="Enter firstname" ng-model="newFamilly.firstname" required />
+              <input type="text" class="form-control" id="firstname" placeholder="Enter firstname" ng-model="familly.firstname" required />
             </div>
             <div class="form-group">
               <label for="exampleInputEmail">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email" ng-model="newFamilly.email" required />
+              <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email" ng-model="familly.email" required />
             </div>
             <button type="submit" class="btn btn-warning" ng-click="resetNewFamillyForm()">Reset</button>
-            <button type="submit" class="btn btn-primary" ng-click="addFamilly(newFamilly)">Add</button>
+            <button type="submit" class="btn btn-primary" ng-click="save(familly)">Save</button>
           </form>
 
         </div>
@@ -100,18 +100,18 @@
           <form role="form">
             <div class="form-group">
               <label for="surname">Surname</label>
-              <input type="text" class="form-control" id="surname" placeholder="Enter surname" ng-model="selectedFamilly.surname" required />
+              <input type="text" class="form-control" id="surname" placeholder="Enter surname" ng-model="familly.surname" required />
             </div>
             <div class="form-group">
               <label for="firstname">Firstname</label>
-              <input type="text" class="form-control" id="firstname" placeholder="Enter firstname" ng-model="selectedFamilly.firstname" required />
+              <input type="text" class="form-control" id="firstname" placeholder="Enter firstname" ng-model="familly.firstname" required />
             </div>
             <div class="form-group">
               <label for="exampleInputEmail">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email" ng-model="selectedFamilly.email" required />
+              <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email" ng-model="familly.email" required />
             </div>
             <button type="submit" class="btn btn-warning" ng-click="resetEditFamillyForm()">Reset</button>
-            <button type="submit" class="btn btn-primary" ng-click="saveFamilly(selectedFamilly,famillyIndex)">Edit</button>
+            <button type="submit" class="btn btn-primary" ng-click="save(familly)">Save</button>
           </form>
 
         </div>
