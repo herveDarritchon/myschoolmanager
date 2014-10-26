@@ -1,3 +1,5 @@
+db/
+
 .merge_file*
 .sass-cache
 src/main/webapp/dist

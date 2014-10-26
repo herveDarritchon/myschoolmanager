@@ -26,11 +26,17 @@ router.get('/:famillyId', function(req, res, next){
 });
 
 router.get('/:famillyId/children', function(req, res, next){
-  if(req.Familly === null){
-    console.log('not found');
-    res.status(404).json({message:'not found'});
-  }
-  res.json(req.Familly.children);
+console.log ('Get with param ' + req.params.famillyId);
+  Familly.findById(req.params.famillyId, function(err, familly) {
+    if (err) {
+      res.send(err);
+    } else if (familly) {
+      res.json(familly.children);
+    } else {
+      console.log('not found');
+      res.status(404).json({message:'not found'});
+    }
+  });
 });
 
 // POST

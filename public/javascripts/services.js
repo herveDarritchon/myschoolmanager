@@ -1,10 +1,19 @@
 var mySchoolManagerService = angular.module('myschoolmanager.services', ['ngResource']);
 
-var Famillies = $resource('/api/famillies');
   // super simple service
   // each function returns a promise object
-  mySchoolManagerService.factory('FamillyAdministrationService', function($http) {
-    return {
+  mySchoolManagerService.factory('FamillyService', ['$resource',
+    function ($resource) {
+    return $resource('famillies',{}, {
+      query: {
+        method:'GET'
+      }
+    });
+
+
+
+/*
+    {
       get: function() {
         return $http.get("/api/famillies");
         //return [{surname: 'Edison', firstname: 'Thomas'},{surname: 'Tesal', firstname: 'Nikola'}];
@@ -16,5 +25,6 @@ var Famillies = $resource('/api/famillies');
         return $http.put("/api/famillies/"+familly._id,familly);
       }
     };
+*/
 
-  });
+  }]);

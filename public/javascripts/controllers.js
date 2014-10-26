@@ -23,30 +23,33 @@ mySchoolManagerCtrl.controller('MainCtrl', ['$scope',
 
  }]);
 
-mySchoolManagerCtrl.controller('FamillyAdministrationCtrl', ['$scope', 'FamillyAdministrationService',
-  function($scope, FamillyAdministrationService) {
+mySchoolManagerCtrl.controller('FamillyAdministrationCtrl', ['$scope', 'FamillyService',
+  function($scope, FamillyService) {
 
     $scope.master ={};
 
     $scope.title = "Familly administration page";
     $scope.message = "This page is dedicated to the familly administration.";
 
-    FamillyAdministrationService.get().success (function(famillies){
+    FamillyService.get().success (function(famillies){
       $scope.famillies = famillies;
     }).error(function(){
       $scope.err="sorry, something goes wrong ! Impossible to retreive the famillies from the database.";
     });
 
+    // Reset the content of the New Familly Form
     $scope.resetNewFamillyForm=function() {
       $scope.newFamilly=angular.copy($scope.master);
     };
 
+    // Reset the content of the Edit Familly Form
     $scope.resetEditFamillyForm=function() {
       $scope.selectedFamilly=angular.copy($scope.master);
     };
 
+
     $scope.addFamilly = function(newFamilly) {
-      FamillyAdministrationService.save(newFamilly).success(function(data,status,headers,config){
+      FamillyService.save(newFamilly).success(function(data,status,headers,config){
         $scope.famillies.push(data);
         $scope.insertSuccessMessage="The familly " + data.surname + " has been added.";
         $scope.resetNewFamillyForm();
@@ -56,7 +59,7 @@ mySchoolManagerCtrl.controller('FamillyAdministrationCtrl', ['$scope', 'FamillyA
     };
 
     $scope.saveFamilly = function(selectedFamilly,index) {
-      FamillyAdministrationService.update(selectedFamilly).success(function(data,status,headers,config){
+      FamillyService.update(selectedFamilly).success(function(data,status,headers,config){
         $scope.master=angular.copy(data);
         console.log ('data updated : %j',data);
         $scope.famillies[index]=angular.copy(data);
