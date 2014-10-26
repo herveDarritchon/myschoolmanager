@@ -1,17 +1,18 @@
 var mySchoolManagerCtrl = angular.module('myschoolmanager.controllers', []);
 
-mySchoolManagerCtrl.controller('AfterSchoolCareCtrl', ['$scope', 'AfterSchoolCareService',
-  function($scope, AfterSchoolCareService) {
+mySchoolManagerCtrl.controller('AfterSchoolCareCtrl', ['$scope',
+  function($scope) {
 
    $scope.title = "After school care page";
-   $scope.message = "Nothing yet ! Plenty to comme !!";
+   $scope.montant = 12.0;
+   $scope.description = "Nothing yet ! Plenty to comme !!";
 
-   $scope.afterSchoolCares = AfterSchoolCareService.getAfterSchoolCares();
-   $scope.afterSchoolCareSelected = $scope.afterSchoolCares[0];
+   // $scope.afterSchoolCares = AfterSchoolCareService.getAfterSchoolCares();
+   // $scope.afterSchoolCareSelected = $scope.afterSchoolCares[0];
 
-   $scope.$watch('afterSchoolCareSelected', function(newValue, oldValue) {
-    console.log("afterSchoolCareSelecte has chaged from " + oldValue.title + " to " + newValue.title);
-  });
+   // $scope.$watch('afterSchoolCareSelected', function(newValue, oldValue) {
+   //  console.log("afterSchoolCareSelecte has chaged from " + oldValue.title + " to " + newValue.title);
+  // });
 
  }]);
 
@@ -23,8 +24,8 @@ mySchoolManagerCtrl.controller('MainCtrl', ['$scope',
 
  }]);
 
-mySchoolManagerCtrl.controller('FamillyAdministrationCtrl', ['$scope', 'FamillyService',
-  function($scope, FamillyService) {
+mySchoolManagerCtrl.controller('FamillyAdministrationCtrl', ['$scope',
+  function($scope) {
 
     $scope.master ={};
 
