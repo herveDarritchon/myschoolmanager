@@ -22,6 +22,11 @@ Servers/
 
 git.properties
 
+# #######################
+# Ignore file - AngularJS
+# #######################
+public/bower_components/
+
 # #########################
 # Ignore file - Maven
 # #########################
@@ -124,10 +129,6 @@ local.properties
 # #######################
 node_modules/
 bin/
-
-# #######################
-# Ignore file - AngularJS
-# #######################
 
 # ##########################
 # Ignore file - Sublime Text
