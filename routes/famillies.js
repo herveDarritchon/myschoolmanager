@@ -69,6 +69,28 @@ router.post('/:famillyId', function(req, res, next) {
   });
 });
 
+router.post('/:famillyId/children', function(req, res, next) {
+  console.log('Get with param ' + req.params.famillyId);
+  Familly.findById(req.params.famillyId, function(err, famillyRetreived) {
+    if (err) {
+      res.send(err);
+    } else if (famillyRetreived) {
+      famillyRetreived.children.push(req.body);
+      famillyRetreived.save(function(err, familly) {
+        if (err) {
+          return next(err);
+        }
+        res.status(200).json(familly);
+      });
+    } else {
+      console.log('not found');
+      res.status(404).json({
+        message: 'not found'
+      });
+    }
+  });
+});
+
 //PUT
 // TODO move the delete from here to the GET method to avoid sending the value to the client
 router.put('/:famillyId', function(req, res, next) {

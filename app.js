@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var os = require('os');
+var moment = require('moment');
 
 // configuartion driver mongodb
 var mongoose = require('mongoose');
@@ -74,4 +76,9 @@ app.use(function(err, req, res, next) {
 
 
 app.listen (port);
-console.log("App listening on port " + port);
+moment.locale('en');
+
+var now = moment();
+console.log("This computer has ", os.cpus().length, "processors and",
+  os.totalmem() / (1024*1024*1024), "Go of RAM.");
+console.log("%s, this App is listening on port %d", now.format('dddd D MMMM YYYY at HH[h]mm'), port);

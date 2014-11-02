@@ -6,7 +6,8 @@ var famillySchema = {
     email: String,
     children: [{
         firstname: String,
-        sexe: String
+        sexe: String,
+        birthdate: String
     }]
 };
 
